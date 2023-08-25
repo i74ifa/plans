@@ -12,6 +12,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public const ROLE_CUSTOMER = 1;
+
+    public const ROLE_ADMIN = 2;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -42,4 +46,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function subscription()
+    {
+        return $this->hasOne(Subscription::class);
+    }
 }
