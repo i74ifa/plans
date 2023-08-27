@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
             $table->decimal('amount');
+            $table->decimal('discount')->default(0);
             $table->foreignIdFor(User::class)->references('id')->on('users');
             $table->foreignIdFor(Plan::class)->references('id')->on('plans');
             $table->timestamps();

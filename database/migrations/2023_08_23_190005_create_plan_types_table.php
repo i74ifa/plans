@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('plan_types', function (Blueprint $table) {
             $table->tinyIncrements('id');
-            $table->string('period', 10);
+            $table->tinyInteger('discount')->nullable();
+            $table->tinyInteger('months_count')->default(1);
         });
     }
 

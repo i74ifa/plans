@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Customer;
 use App\Models\Plan;
+use App\Models\PlanType;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,10 +17,10 @@ return new class extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->string('period', 10);
             $table->timestamp('expire_at');
             $table->foreignIdFor(User::class)->references('id')->on('users');
-            $table->foreignIdFor(Plan::class)->references('id')->on('plans');
+            $table->foreignIdFor(Plan::class)->nullable()->references('id')->on('plans');
+            $table->tinyInteger('plan_type_id');
             $table->timestamps();
         });
     }
