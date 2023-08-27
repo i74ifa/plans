@@ -17,20 +17,19 @@ class PlanTypeSeeder extends Seeder
         DB::table('plan_types')->truncate();
         DB::table('plan_types')->insert([
             [
-                'id' => PlanType::Weekly,
-                'period' => '+7 day',
-            ],
-            [
                 'id' => PlanType::Monthly,
-                'period' => '+1 month',
+                'discount' => 0,
+                'months_count' => 1,
             ],
             [
                 'id' => PlanType::EveryThreeMonth,
-                'period' => '+3 month',
+                'discount' => 15,
+                'months_count' => 3,
             ],
             [
                 'id' => PlanType::Yearly,
-                'period' => '+1 year',
+                'discount' => 20,
+                'months_count' => 12,
             ]
         ]);
     }
