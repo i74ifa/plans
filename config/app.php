@@ -170,7 +170,6 @@ return [
         App\Providers\Filament\CustomerPanelProvider::class,
         App\Providers\Filament\AdminPanelProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Clockwork\Support\Laravel\ClockworkServiceProvider::class,
     ])->toArray(),
 
     /*
