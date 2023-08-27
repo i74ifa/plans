@@ -1,0 +1,15 @@
+@import "../../../../vendor/filament/filament/resources/css/theme.css";
+
+@config './tailwind.config.js';
+
+.subscription-status {
+    @apply fixed top-0 right-0 z-50 w-full flex justify-center bg-purple-500 text-white h-8 items-center text-sm font-bold;
+}
+
+[subscription="0"] .fi-topbar {
+    @apply top-8;
+}
+
+[subscription="0"] aside {
+    @apply top-8;
+}
